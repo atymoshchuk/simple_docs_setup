@@ -10,9 +10,11 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+from sphinx.ext import apidoc
+
+sys.path.insert(0, os.path.abspath('../../app'))
 
 
 # -- Project information -----------------------------------------------------
@@ -31,7 +33,14 @@ release = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "m2r",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
+    "sphinx_autodoc_typehints",
 ]
+
+source_suffix = {".rst": "restructuredtext", ".md": "markdown"}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -39,7 +48,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -53,3 +62,27 @@ html_theme = 'alabaster'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+def run_apidoc(_):
+    exclude = []
+
+    argv = [
+        "--doc-project",
+        "Code Reference",
+        "-M",
+        "-f",
+        "-d",
+        "3",
+        "--tocfile",
+        "index",
+        "-o",
+        "./_code_reference/",
+        "../../app",
+    ] + exclude
+
+    apidoc.main(argv)
+
+
+def setup(app):
+    app.connect("builder-inited", run_apidoc)
