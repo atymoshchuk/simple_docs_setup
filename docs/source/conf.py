@@ -14,6 +14,13 @@ import os
 import sys
 from sphinx.ext import apidoc
 
+import sys
+from pathlib import Path
+
+
+current_dir = Path(__file__).parent.absolute()
+code_dir = current_dir.parents[1] / "app"
+
 sys.path.insert(0, os.path.abspath('../../app'))
 
 
@@ -33,11 +40,9 @@ release = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "m2r",
     "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
-    "sphinx.ext.intersphinx",
-    "sphinx_autodoc_typehints",
+    "recommonmark",
 ]
 
 source_suffix = [".rst", ".md"]
@@ -77,8 +82,8 @@ def run_apidoc(_):
         "--tocfile",
         "index",
         "-o",
-        "./_code_reference/",
-        "../../app",
+        str(current_dir / "code_reference"),
+        str(code_dir),
     ] + exclude
 
     apidoc.main(argv)
