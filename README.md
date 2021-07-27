@@ -10,13 +10,13 @@ Please create your Python virtual environment and install the requirements, for 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements/app.txt
 ```
 
 ## Building a docker image 
 
 One part of the examples is a FastAPI Hello world example, which is called an `app` project.
-To run this project, you need to install requirements from `requirements.txt`.
+To run this project, you need to install requirements from `requirements/app.txt`.
 To build this project, you need to have Docker installed and running on your machine.
 
 To build image, use command:
