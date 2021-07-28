@@ -1,7 +1,7 @@
 FROM tiangolo/uvicorn-gunicorn:python3.7
 
-ADD ./app /app
-ADD requirements/app.txt /app
+COPY ./app /app
+COPY requirements/app.txt /app
 
 WORKDIR /app/
 
