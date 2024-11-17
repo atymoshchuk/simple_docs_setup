@@ -1,2 +1,5 @@
-fastapi==0.100.0
+fastapi==0.109.1
 uvicorn==0.22.0
+anyio>=4.4.0 # not directly required, pinned by Snyk to avoid a vulnerability
+starlette>=0.40.0 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
