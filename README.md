@@ -36,16 +36,15 @@ You will see something like
 ```
 REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
 app                         latest              24d8a25e33f5        2 seconds ago       975MB
-tiangolo/uvicorn-gunicorn   python3.7           995f89c25760        2 months ago        944MB
 ```
 
 To run `app` in docker:
 
 ```
-docker run -d -p 80:80 app
+docker run -d -p 8000:8000 app
 ```
 
-And then you can open in any browser: `http://localhost:80/docs` or `http://localhost:80`
+And then you can open in any browser: `http://localhost:8000/docs` or `http://localhost:8000`
 
 Check status:
 
@@ -56,14 +55,14 @@ docker ps -a
 You will see something similar:
 
 ```
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
-b699f5df0482        app                 "uvicorn main:app --…"   4 minutes ago       Up 4 minutes        0.0.0.0:80->80/tcp   unruffled_johnson
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+ee82ffe241ae        app                 "fastapi run main.py"    4 minutes ago       Up 4 minutes        0.0.0.0:8000->8000/tcp   unruffled_johnson
 ```
 
 To stop docker container:
 
 ```
-docker stop b699f5df0482
+docker stop ee82ffe241ae
 ```
 
 And them you will see that container exited:
@@ -71,5 +70,5 @@ And them you will see that container exited:
 ```
 $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
-b699f5df0482        app                 "uvicorn main:app --…"   5 minutes ago       Exited (0) 2 seconds ago                       unruffled_johnson
+ee82ffe241ae        app                 "fastapi run main.py"    5 minutes ago       Exited (0) 2 seconds ago                       unruffled_johnson
 ```

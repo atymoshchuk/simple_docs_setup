@@ -1,4 +1,5 @@
 """Simple application to see how documentation works"""
+
 from fastapi import FastAPI
 
 app = FastAPI()
