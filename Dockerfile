@@ -1,4 +1,4 @@
-FROM python:3.12-bookworm
+FROM python:3.14.0a2-alpine3.20
 
 COPY ./app /app
 COPY requirements/app.txt /app
