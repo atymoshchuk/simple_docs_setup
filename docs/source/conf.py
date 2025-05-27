@@ -21,7 +21,8 @@ from pathlib import Path
 current_dir = Path(__file__).parent.absolute()
 code_dir = current_dir.parents[1] / "app"
 
-sys.path.insert(0, os.path.abspath("../../app"))
+sys.path.insert(0, code_dir)
+sys.path.insert(0, os.path.abspath('../..'))
 
 
 # -- Project information -----------------------------------------------------
