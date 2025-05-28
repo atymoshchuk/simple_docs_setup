@@ -12,6 +12,7 @@ Welcome to SimpleDocTutor's documentation!
    tutorial
    explanation
    interactive_example
+   pyscript_example
    code_reference/index.rst
 
 

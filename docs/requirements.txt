@@ -3,3 +3,4 @@ recommonmark==0.7.1
 ipykernel==6.29.5
 ipython==9.2.0
 pandoc==2.4
+sphinx-pyscript==0.1.0

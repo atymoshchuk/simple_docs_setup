@@ -42,7 +42,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
     "recommonmark",
-    # "sphinx_pyscript",
+    "sphinx_pyscript",
     "nbsphinx",
 ]
 
