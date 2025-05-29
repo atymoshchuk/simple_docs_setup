@@ -11,7 +11,6 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-import sys
 from sphinx.ext import apidoc
 
 import sys
@@ -21,7 +20,7 @@ from pathlib import Path
 current_dir = Path(__file__).parent.absolute()
 code_dir = current_dir.parents[1] / "app"
 
-sys.path.insert(0, os.path.abspath("../../app"))
+sys.path.insert(0, os.path.abspath("../.."))
 
 
 # -- Project information -----------------------------------------------------
@@ -43,6 +42,8 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
     "recommonmark",
+    "sphinx_pyscript",
+    "nbsphinx",
 ]
 
 source_suffix = [".rst", ".md"]

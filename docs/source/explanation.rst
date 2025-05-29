@@ -25,7 +25,6 @@ I love this quote from `The Documentation System <https://documentation.divio.co
 
 Used sources and books to read
 ##############################
-1. `The Documentation System <https://documentation.divio.com/>`_
+1. `Technical Documentation approach <https://diataxis.fr/>`_
 2. `Sphinx official documentation <https://www.sphinx-doc.org>`_
 3. `Read The Docs official documentation <https://readthedocs.org/>`_
-4. `Article by Anastasiia Tymoshchuk <https://atymo.me/blog/python_documentation.html>`_
